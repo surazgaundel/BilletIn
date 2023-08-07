@@ -2,18 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Avenir';
+  src: url('./font/AvenirLTStd-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('./font/AvenirLTStd-Black.otf') format('opentype');
+  font-weight: bold;
+  font-style: bold;
+}
+
 :root {
   font-family: Avenir, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   
   color-scheme: light dark;
-  color: #ffffff;
-  background-color: #404F43;
-
+  color:theme('colors.white');
+  background-color: theme('colors.darkGreen');
+  --transition: 1s linear ease-in-out;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.active{
+  color:theme('colors.green');
+  text-decoration:underline;
+
+}
+
+.item-number{
+  position: absolute;
+  top:-0.5rem;  
+  left:0.9rem;
+  background-color:theme('colors.green');
+  padding:0 0.2rem;
+  border-radius: 10%;
+  height:min-content;
+  font-weight:bold;
+  color:theme('colors.darkGreen');
 }
