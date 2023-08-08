@@ -8,10 +8,10 @@ import {RxCross2} from 'react-icons/rx';
 import { useProductsContext } from '../context/productcontext';
 
 export default function NavBar() {
-  const{isSidebarOpen,toggleSidebar} =useProductsContext();
+  const{isSidebarOpen,toggleSidebar } =useProductsContext();
 
   return (
-    <div className="flex justify-around items-center h-10vh border-2 border-white">
+    <div className="flex justify-around items-center h-10vh">
         <div>
         <NavLink to='/' >
         <img src={Logo} className='w-32 sm:w-40 md:w-52' alt="Logo" />
@@ -21,7 +21,7 @@ export default function NavBar() {
           {
             links.map(link=>{
               const {id,text,url}=link;
-              return <NavLink key={id} to={url} className='capitalize text-xl hover:underline hover:text-green'>{text}</NavLink>
+              return <NavLink key={id} to={url} className='capitalize text-xl hover:underline hover:text-darkRed'>{text}</NavLink>
 
             })
           }

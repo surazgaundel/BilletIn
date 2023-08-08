@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        green:'#BCE709',
-        darkGreen:'#404F43'
+        white:'#fefbff',
+        darkRed:'#d25119',
+        green:'#3a4e26'
       },
       fontWeight: {
         bolder: '800',
