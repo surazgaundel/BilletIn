@@ -15,6 +15,11 @@
   font-style: bold;
 }
 
+@layer components{
+  .hover-btn{
+    @apply px-4 text-xl py-2 rounded-md text-white transition ease-in-out delay-150 bg-darkRed hover:bg-green;
+  }
+}
 :root {
   font-family: Avenir, sans-serif;
   line-height: 1.5;
