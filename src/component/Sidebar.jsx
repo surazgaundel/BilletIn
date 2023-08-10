@@ -7,7 +7,7 @@ export default function Sidebar() {
   const {isSidebarOpen,closeSidebar}=useProductsContext();
   
   return (
-    <div className={`${!isSidebarOpen ? 'hidden':''} md:hidden absolute left-0 z-10 bg-white w-full h-[90vh] p-5`}>
+    <div className={`${!isSidebarOpen ? 'hidden':''} md:hidden absolute left-0 z-10 bg-white w-full h-[50vh] p-5`}>
         <div className="flex flex-col gap-2 justify-around">
           {
             links.map(link=>{
