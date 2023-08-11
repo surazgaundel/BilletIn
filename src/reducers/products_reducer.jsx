@@ -7,6 +7,7 @@ const products_reducer=(state,action)=>{
                 return {...state,isSidebarOpen:false};
         case 'TOGGLE_SIDEBAR':
                 return {...state,isSidebarOpen:!state.isSidebarOpen};
+        //to render all products and filter out featured products only.
         case 'GET_PRODUCTS_BEGIN':
                 return {...state,productsLoading:true}
         case 'GET_PRODUCTS_SUCCESS':
@@ -21,6 +22,20 @@ const products_reducer=(state,action)=>{
                 return {...state,
                 productsLoading:false,
                 productsError:true
+                }
+        //to render single products with full details.
+        case 'GET_SINGLE_PRODUCT_BEGIN':
+                return {...state,singleProductLoading:true,singleProductError:false}
+        case 'GET_SINGLE_PRODUCT _SUCCESS':
+                return {
+                        ...state,
+                        singleProductLoading:false,
+                        singleProduct:action.payload,
+                }
+        case 'GET_SINGLE_PRODUCT_ERROR':
+                return {...state,
+                        singleProductLoading:false,
+                        singleProductError:true
                 }
         default:
                 return state;
