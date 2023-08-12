@@ -17,7 +17,7 @@
 
 @layer components{
   .hover-btn{
-    @apply px-4 text-xl py-2 rounded-md text-white transition ease-in-out delay-150 bg-darkRed hover:bg-green;
+    @apply px-4 md:text-xl py-2 rounded-md text-white transition ease-in-out delay-150 bg-darkRed hover:bg-green;
   }
 }
 :root {
@@ -38,7 +38,7 @@
 
 .active{
   color:theme('colors.darkRed');
-  text-decoration:underline;
+  /* text-decoration:underline; */
   
   & span{
     color:theme('colors.darkRed');
@@ -46,7 +46,7 @@
 
 }
 
-.item-number{
+.item-number{ 
   position: absolute;
   top:-0.5rem;  
   left:0.9rem;

@@ -6,6 +6,8 @@ import FeaturedProducts from "./FeaturedProducts"
 import Contact from "./Contact"
 import Services from "./Services"
 import PageHero from "./PageHero";
+import ProductImage from "./ProductImage"
+import Stars from "./Stars"
 
 export {NavBar,
     Sidebar,
@@ -14,6 +16,8 @@ export {NavBar,
     FeaturedProducts,
     Contact,
     Services,
-    PageHero
+    PageHero,
+    ProductImage,
+    Stars
 
 }

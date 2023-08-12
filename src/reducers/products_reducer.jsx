@@ -11,6 +11,7 @@ const products_reducer=(state,action)=>{
         case 'GET_PRODUCTS_BEGIN':
                 return {...state,productsLoading:true}
         case 'GET_PRODUCTS_SUCCESS':
+                // eslint-disable-next-line no-case-declarations
                 const featuredProducts=action.payload.filter(product =>product.featured===true);
                 return {
                         ...state,
@@ -26,7 +27,7 @@ const products_reducer=(state,action)=>{
         //to render single products with full details.
         case 'GET_SINGLE_PRODUCT_BEGIN':
                 return {...state,singleProductLoading:true,singleProductError:false}
-        case 'GET_SINGLE_PRODUCT _SUCCESS':
+        case 'GET_SINGLE_PRODUCT_SUCCESS':
                 return {
                         ...state,
                         singleProductLoading:false,
