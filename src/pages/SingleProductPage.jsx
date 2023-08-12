@@ -5,7 +5,7 @@ import { single_product_url as url } from '../utils/component';
 import { priceFormat } from '../utils/helper';
 import Loading from '../component/Loading';
 import ErrorPage from './ErrorPage';
- import {PageHero, ProductImage, Stars} from '../component';
+ import {PageHero, ProductImage, Stars,AddToCart} from '../component';
 export default function SingleProductPage() {
   const {id}=useParams();
 
@@ -19,7 +19,7 @@ export default function SingleProductPage() {
     fetchSingleProduct(`${url}${id}`)
   }, [id])
 
-  const {name,price,description,stock,stars,reviews,company,images}=product;
+  const {name,price,description,stock,stars,reviews,id:PId,company,images}=product;
 
 
   if(loading){
@@ -49,8 +49,10 @@ export default function SingleProductPage() {
         </p>
         <p className='capitalize'>
           <span className='font-bold'>Brand:</span>{company}</p>
-        <hr/>
-        {/* {stock && <AddToCart/>} */}
+        <hr className='w-1/3'/>
+        <div className='my-3'>
+        {stock && <AddToCart product={product}/>}
+        </div>
       </section>
     </div>
     </div>

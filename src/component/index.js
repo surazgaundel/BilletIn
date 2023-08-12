@@ -8,6 +8,8 @@ import Services from "./Services"
 import PageHero from "./PageHero";
 import ProductImage from "./ProductImage"
 import Stars from "./Stars"
+import AddToCart from "./AddToCart"
+import Amount from "./Amount"
 
 export {NavBar,
     Sidebar,
@@ -18,6 +20,8 @@ export {NavBar,
     Services,
     PageHero,
     ProductImage,
-    Stars
+    Stars,
+    AddToCart,
+    Amount
 
 }
