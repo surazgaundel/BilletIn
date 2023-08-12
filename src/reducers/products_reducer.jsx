@@ -16,7 +16,7 @@ const products_reducer=(state,action)=>{
                 return {
                         ...state,
                         productsLoading:false,
-                        payload:action.payload,
+                        products:action.payload,
                         featuredProducts
                 }
         case 'GET_PRODUCTS_ERROR':
