@@ -6,7 +6,10 @@ const filter_reducer=(state,action)=>{
                 ...state,
                 allProducts:[...action.payload],
                 filteredProducts:[...action.payload],
+                filterLoading:true
             }
+        case 'LOAD_PRODUCTS_SUCCESS':
+            return{...state,filterLoading:false}
         default:
             return state;
     }

@@ -7,7 +7,8 @@ import { useProductsContext } from './productcontext';
 const initialState={
     allProducts:[],
     filteredProducts:[],
-    filterLoading:false
+    filterLoading:false,
+    gridView:true
 
 }
 
@@ -19,6 +20,7 @@ export const FilterProvider=({children})=>{
 
     const loadProducts=()=>{
         dispatch({type:'LOAD_PRODUCTS',payload:products})
+        dispatch({type:'LOAD_PRODUCTS_SUCCESS'})
     }
 
     useEffect(()=>{
