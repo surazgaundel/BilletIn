@@ -1,12 +1,17 @@
 /* eslint-disable no-case-declarations */
 
+
 const filter_reducer=(state,action)=>{
     switch(action.type){
         case 'LOAD_PRODUCTS':
+            let maxPrice=action.payload.map(p=>p.price);
+            maxPrice=Math.max(...maxPrice) 
+
             return {
                 ...state,
                 allProducts:[...action.payload],
-                filteredProducts:[...action.payload]
+                filteredProducts:[...action.payload],
+                filters:{...state.filters,maxPrice,price:maxPrice}
             }
         case 'SET_GRID_VIEW':
             return{...state,gridView:true}
@@ -33,8 +38,14 @@ const filter_reducer=(state,action)=>{
                     break
                 default:
                     return {...state}
-                    // return {...state,filteredProducts:tempProducts};
             }
+            return {...state};
+        case 'UPDATE_FILTERS':
+            const {name,value}=action.payload;
+            return {...state,filters:{...state.filter,[name]:value}}
+        case 'FILTER_PRODUCTS':
+            console.log('sd')
+            return {...state};
         default:
             return {...state};
     }

@@ -8,7 +8,17 @@ const initialState={
     allProducts:[],
     filteredProducts:[],
     gridView:false,
-    sort:'price-ascend'
+    sort:'price-ascend',
+    filters:{
+        text:'',
+        company:'All',
+        category:'All',
+        color:'All',
+        minPrice:0,
+        maxPrice:0,
+        price:0,
+        shipment:false
+    }
 
 }
 
@@ -45,15 +55,31 @@ export const FilterProvider=({children})=>{
     const sortProducts=()=>{
         dispatch({type:'SORT_PRODUCTS'})
     }
-
+    //filter the products based on the user inputs on search
+    const filterProducts=()=>{
+        dispatch({type:'FILTER_PRODUCTS'})
+    }
     useEffect(()=>{
+        filterProducts();
         sortProducts();
-    },[state.sort])
+    },[state.sort,state.filter])
 
+    //gather every user input on search field
+    const updateFilters=(e)=>{
+        const name=e.target.name;
+        const value=e.target.value;
+        dispatch({type:'UPDATE_FILTERS',payload:{name,value}})
+
+    }
+
+    //clear filters
+    const clearFilters=()=>{
+
+    }
 
 
     return(
-        <FilteredContext.Provider value={{...state,setGridView,setListView,updateSort}}>
+        <FilteredContext.Provider value={{...state,setGridView,setListView,updateSort,updateFilters,clearFilters}}>
             {children}
         </FilteredContext.Provider>
     )
