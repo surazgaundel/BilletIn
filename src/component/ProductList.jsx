@@ -18,7 +18,7 @@ export default function ProductList() {
       <Error/>
     )
   }
-  if(gridView===true){
+  if(gridView===false){
     return(<ListView/>)
   }
   return (

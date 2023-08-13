@@ -7,8 +7,8 @@ import { useProductsContext } from './productcontext';
 const initialState={
     allProducts:[],
     filteredProducts:[],
-    filterLoading:false,
-    gridView:true
+    gridView:false,
+    sort:'price-ascend'
 
 }
 
@@ -18,17 +18,42 @@ export const FilterProvider=({children})=>{
     const {products} =useProductsContext();
     const [state,dispatch]=useReducer(reducer,initialState);
 
+    //load products into filtered products and all products
     const loadProducts=()=>{
         dispatch({type:'LOAD_PRODUCTS',payload:products})
-        dispatch({type:'LOAD_PRODUCTS_SUCCESS'})
     }
 
     useEffect(()=>{
         loadProducts();
     },[products])
 
+    //change the view to grid and list
+    const setGridView=()=>{
+        dispatch({type:'SET_GRID_VIEW'})
+    }
+    const setListView=()=>{
+        dispatch({type:'SET_LIST_VIEW'})
+    }
+
+    //to get the option value when user choose different sorting options 
+    const updateSort=(e)=>{
+        const value=e.target.value;
+        dispatch({type:'UPDATE_SORT',payload:value})
+    }   
+
+    //sort the products on options
+    const sortProducts=()=>{
+        dispatch({type:'SORT_PRODUCTS'})
+    }
+
+    useEffect(()=>{
+        sortProducts();
+    },[state.sort])
+
+
+
     return(
-        <FilteredContext.Provider value={{...state}}>
+        <FilteredContext.Provider value={{...state,setGridView,setListView,updateSort}}>
             {children}
         </FilteredContext.Provider>
     )
