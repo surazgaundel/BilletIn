@@ -5,13 +5,16 @@ import './index.css';
 import {BrowserRouter} from 'react-router-dom';
 import { ProductsProvider } from './context/productcontext.jsx';
 import { FilterProvider } from './context/filtercontext.jsx';
+import { CartProvider } from './context/cartcontext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <BrowserRouter>
       <ProductsProvider>
         <FilterProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </FilterProvider>
       </ProductsProvider>
       </BrowserRouter>

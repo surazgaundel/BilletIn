@@ -1,12 +1,19 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import {FaCheck} from 'react-icons/fa';
 import {Amount} from '../component';
+import { useCartContext } from '../context/cartcontext';
+import {Link} from 'react-router-dom';
+
 export default function AddToCart({product}) {
+
+    const {addToCart}=useCartContext();
     const {id,stock,colors}=product;
 
     const [mainColor,setMainColor]=useState(colors[0])
     const [amount, setAmount]=useState(1);
 
+    console.log(mainColor);
     const handleColor=(color)=>{
         setMainColor(color)
     }
@@ -52,6 +59,7 @@ export default function AddToCart({product}) {
             IncreaseAmount={IncreaseAmount} 
             DecreaseAmount={DecreaseAmount}/>
         </div>
+        <Link to='/cart' className='hover-btn text-base' onClick={()=>addToCart(id,mainColor,amount,product)}>Add to Cart</Link>
     </div>
   )
 }

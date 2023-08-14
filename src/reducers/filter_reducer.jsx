@@ -80,6 +80,7 @@ const filter_reducer=(state,action)=>{
             }
             //filter from the price
             tempProductsArray=tempProductsArray.filter((product)=>product.price<=price)
+            
             //filter from the shipment
             if(shipment){
                 tempProductsArray=tempProductsArray.filter((product)=>product.shipping===true)
