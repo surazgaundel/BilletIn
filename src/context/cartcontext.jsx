@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useReducer,useContext, useEffect } from "react"
 import reducer from '../reducers/cart_reducer';
 
@@ -31,16 +32,22 @@ export const CartProvider =({children})=>{
 
     //remove item
     const removeItem=(id)=>{
-        // dispatch({type:})
+        dispatch({type:'REMOVE_CART_ITEM',payload:id}) 
     }
     const toggleAmount=(id,value)=>{
-        // dispatch({type:})
+        dispatch({type:'TOGGLE_CART_ITEM_AMOUNT',payload:{id,value}})
     }
     const clearCart=()=>{
-        // dispatch({type:})
+        dispatch({type:'CLEAR_CART'})
+    }
+
+    //to show count on cart
+    const countCartItems=()=>{
+        dispatch({type:'COUNT_CART_ITEMS'})
     }
 
     useEffect(()=>{
+        countCartItems();
         localStorage.setItem('cart',JSON.stringify(state.cart));    
     },[state.cart])
 

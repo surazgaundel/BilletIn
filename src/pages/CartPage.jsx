@@ -1,8 +1,8 @@
 import React from 'react'
 import { useCartContext } from '../context/cartcontext'
 import { Link } from 'react-router-dom';
-import { PageHero } from '../component';
-export default function CartPage() {
+import { PageHero, CartContent } from '../component';
+export default function CartPage({}) {
   const {cart}=useCartContext();
   if(cart.length<1){
     return(
@@ -16,7 +16,7 @@ export default function CartPage() {
     <div>
       <PageHero title='cart'/>
       <div className='container'>
-
+        <CartContent/>
       </div>
     </div>
   )

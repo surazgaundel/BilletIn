@@ -16,6 +16,9 @@ import ProductList from "./ProductList"
 import Filter from "./Filter"
 import Product from "./Product"
 import ListView from "./ListView"
+import CartContent from "./CartContent"
+import CartItem from "./CartItem"
+import CartTotal from "./CartTotal"
 
 export {NavBar,
     Sidebar,
@@ -34,5 +37,8 @@ export {NavBar,
     Filter,
     ProductList,
     Product,
-    ListView
+    ListView,
+    CartContent,
+    CartItem,
+    CartTotal
 }

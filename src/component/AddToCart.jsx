@@ -13,7 +13,6 @@ export default function AddToCart({product}) {
     const [mainColor,setMainColor]=useState(colors[0])
     const [amount, setAmount]=useState(1);
 
-    console.log(mainColor);
     const handleColor=(color)=>{
         setMainColor(color)
     }
