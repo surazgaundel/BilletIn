@@ -68,8 +68,21 @@ export const FilterProvider=({children})=>{
     const updateFilters=(e)=>{
         let name=e.target.name;
         let value=e.target.value;
-        if(name==='category'){
-            value=e.target.textContent;
+        switch(name){
+            case 'category':
+                value=e.target.textContent;
+                break;
+            case 'color':
+                value=e.target.dataset.color;
+                break;
+            case 'price':
+                value=Number(value);
+                break;
+            case 'shipment':
+                value=e.target.checked
+                break;
+            default:
+                value;
         }
         dispatch({type:'UPDATE_FILTERS',payload:{name,value}})
 
@@ -77,7 +90,7 @@ export const FilterProvider=({children})=>{
 
     //clear filters
     const clearFilters=()=>{
-
+        dispatch({type:'CLEAR_FILTERS'})
     }
 
 

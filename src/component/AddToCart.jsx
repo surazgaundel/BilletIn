@@ -42,7 +42,7 @@ export default function AddToCart({product}) {
                         style={{backgroundColor:color}}
                         className={`h-4 w-4 m-1  rounded-full`}
                         onClick={()=>handleColor(color)}
-                        >{mainColor==color?<FaCheck className='text-white p-[0.2rem]'/>:null}</button>
+                        >{mainColor===color?<FaCheck className='text-white p-[0.2rem]'/>:null}</button>
                 )
             })}
         </div>
