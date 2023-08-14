@@ -37,14 +37,13 @@ const filter_reducer=(state,action)=>{
                     tempProducts= filteredProducts.sort((a,b)=>b.name.localeCompare(a.name));    
                     break
                 default:
-                    return {...state}
+                    return {...state,featuredProducts:tempProducts}
             }
             return {...state};
         case 'UPDATE_FILTERS':
             const {name,value}=action.payload;
-            return {...state,filters:{...state.filter,[name]:value}}
+            return {...state,filters:{...state.filters,[name]:value}}
         case 'FILTER_PRODUCTS':
-            console.log('sd')
             return {...state};
         default:
             return {...state};

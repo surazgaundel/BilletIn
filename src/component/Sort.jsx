@@ -15,7 +15,7 @@ export default function Sort() {
       <p className='lg:w-[30%] h-0.5 bg-green mt-4 ml-4'/>
       <form>
         <label htmlFor='sort'>Sort By:</label>
-        <select value={sort} onChange={updateSort} className='bg-white border-2 border-green checked:bg-green rounded-sm' name='sort' id='sort'>
+        <select value={sort} onChange={updateSort} className='bg-white border border-green checked:bg-green rounded-sm' name='sort' id='sort'>
           <option value='price-ascend' className='hover:bg-green'>Price (low to high)</option>
           <option value='price-descend' className='hover:bg-green'>Price (high to low)</option>
           <option value='name-ascend' className='hover:bg-green'>Name (A-Z)</option>
