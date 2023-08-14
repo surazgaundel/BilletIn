@@ -11,9 +11,9 @@ const initialState={
     sort:'price-ascend',
     filters:{
         text:'',
-        company:'All',
-        category:'All',
-        color:'All',
+        company:'all',
+        category:'all',
+        color:'all',
         minPrice:0,
         maxPrice:0,
         price:0,
@@ -62,7 +62,7 @@ export const FilterProvider=({children})=>{
     useEffect(()=>{
         filterProducts();
         sortProducts();
-    },[state.sort,state.filter])
+    },[state.sort,state.filters])
 
     //gather every user input on search field
     const updateFilters=(e)=>{

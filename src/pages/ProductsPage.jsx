@@ -8,7 +8,7 @@ export default function ProductsPage() {
         <div className='grid-container'>
           <section className='filter-component'><Filter/></section>
           <section className='sort-component'><Sort/></section>
-          {/* <section className='product-list-component'><ProductList/></section> */}
+          <section className='product-list-component'><ProductList/></section>
         </div>
     </div>
   )

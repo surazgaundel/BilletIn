@@ -1,8 +1,6 @@
 import React from 'react'
 import { useFilterContext } from '../context/filtercontext';
 import Product from './Product';
-// import Empty from '../assets/Empty.svg';
-import {Error} from '../pages';
 import {ListView} from '../component'
 import {Loading} from '../component';
 
@@ -15,7 +13,7 @@ export default function ProductList() {
   }
   if(filteredProducts.length<1){
     return(
-      <Error/>
+      <h1>Sorry, I didn&apos;t find the lost unicorn you were searching for.</h1>
     )
   }
   if(gridView===false){
