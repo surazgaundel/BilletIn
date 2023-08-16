@@ -15,7 +15,7 @@ export default function Sidebar() {
               return <NavLink key={id} to={url} className=' px-2 py-1 rounded-sm capitalize text-xl  hover:underline hover:text-darkRed hover:bg-green' onClick={closeSidebar}>{text}</NavLink>
             })
           }
-          <NavLink to='/checkout' className='px-2 py-1 rounded-sm capitalize text-xl hover:underline hover:text-darkRed hover:bg-green' onClick={closeSidebar}>Checkout</NavLink>
+          {/* <NavLink to='/checkout' className='px-2 py-1 rounded-sm capitalize text-xl hover:underline hover:text-darkRed hover:bg-green' onClick={closeSidebar}>Checkout</NavLink> */}
         </div>
         <div className='flex justify-center mt-5'>
           <Cart/>
